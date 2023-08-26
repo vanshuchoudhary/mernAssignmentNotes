@@ -1,0 +1,479 @@
+typeof in JavaScript is an operator used for type checking and returns the data type of the operand passed to it
+
+What is a null value in JavaScript?
+The null value represents the intentional absence of any object value. It is one of JavaScript's primitive values and is treated as falsy for boolean operations.
+
+var a =new Number(10);//   var a="msit"
+							a.toUpperCase()//wrapper class
+
+var x;
+undefined
+x=10;
+10
+typeof x;
+'number'
+typeof undefined;
+'undefined'
+//imumtable type
+undefined
+//infinity(error value)
+undefined
+//Nan(error value)
+undefined
+//helper methods isNan,isFinite
+undefined
+a="100";
+'100'
+a+200
+'100200'
+parseInt(a)+30;
+130
+//parseInt,parseFloat
+undefined
+//string+number=string
+undefined
+//number-string=number
+undefined
+a**3;
+1000000
+//(es8 feature)
+undefined
+//mdn javascrip[t
+undefined
+//${} es6(2015//string methods)
+undefined
+var b="msit"
+undefined
+b.upp
+undefined
+b.toUpperCase
+ƒ toUpperCase() { [native code] }
+b.toUpperCase();
+'MSIT'
+b;
+'msit'
+
+function add(){
+    console.log(arguments.length);
+}
+undefined
+add(2,3,4,5);
+VM1203:2 4
+undefined
+console.log(arguments[1]);
+VM1377:1 Uncaught ReferenceError: arguments is not defined
+    at <anonymous>:1:13
+(anonymous) @ VM1377:1
+function add(){
+    console.log(arguments.length);
+}
+undefined
+function add(){
+    console.log(arguments.length);
+    console.log(arguments[1]);
+}
+undefined
+add(1,2,4,5,6);
+VM1467:2 5
+VM1467:3 2
+undefined
+
+
+
+function amstrong( num)
+{
+    var n=num.toString();
+    var l=n.length;
+    var sum=0;
+    
+    for(let i of n)
+    {
+        sum=sum+Math.pow(parseInt(i),l);
+    }
+    
+    if(sum==num)
+    {
+        return true;
+    }
+    else{
+        return false;
+    }
+    
+}
+
+console.log(amstrong(153));
+console.log(amstrong(13));
+
+
+
+console.log(5 == "5"); // true, because the string "5" is converted to a number before comparison
+console.log(null == undefined); // true, because both null and undefined are considered equal to each other
+
+
+console.log(5 === "5"); // false, because the types (number and string) are different
+console.log(null === undefined); // false, because their types are different
+
+
+null ka typeof woh object hota h
+->it is basically used to cut the link to a object
+->delete the reference to object
+
+var a=undefined 
+->means that we declard the variable but not initialised the value to it
+
+
+
+console.log("Welcome to Programiz!");
+
+function func1()
+{
+    return 1;
+}
+
+function func2()
+{
+    return 2;
+}
+
+function add()
+{
+    
+    var sum=0;
+    for(let a=0;a<arguments.length;a++)
+    {
+        if(typeof arguments[a]=='function')
+        {
+            var ans=arguments[a];
+            sum +=ans;
+        }
+        
+        if(arguments[a] instanceof Array)
+        {
+           for(var j=0;j<arguments[a].length;j++)
+           {
+               sum+=isNaN(parseInt(arguments[a][j]))?0:parseInt(arguments[a][j]);
+               
+               console.log(sum);
+           }
+           continue;
+        }
+        
+        sum+=isNaN(parseInt(arguments[a]))?0:parseInt(arguments[a]);
+        console.log(sum);
+    }
+    
+    console.log(sum);
+}
+
+//add(5,6,7);
+//add(4,"4",func1());
+add(1,"200",[20,20]);
+
+
+let t=new Date();
+console.log(t);
+console.log(t.getHours());
+let weeks=["sunday","monday","tue","wed","thur","fri","sat"];
+console.log(`today is ${weeks[t.getDay()]}`)
+var a=t.getHours();
+if(a>12)
+{
+    a=a-12;
+    a=a+"PM"
+}
+else{
+    a=a+"AM";
+}
+console.log(`current time is:${a} :${t.getMinutes()} :${t.getSeconds()}`)
+
+
+
+REST VS SPREAD
+
+// Use rest to enclose the rest of specific user-supplied values into an array:
+function myBio(firstName, lastName, ...otherInfo) { 
+  return otherInfo;
+}
+
+// Invoke myBio function while passing five arguments to its parameters:
+myBio("Oluwatobi", "Sofela", "CodeSweetly", "Web Developer", "Male");
+
+// The invocation above will return:
+["CodeSweetly", "Web Developer", "Male"]
+
+
+Now, consider this example of a spread operator:
+
+// Define a function with three parameters:
+function myBio(firstName, lastName, company) { 
+  return `${firstName} ${lastName} runs ${company}`;
+}
+
+// Use spread to expand an array’s items into individual arguments:
+myBio(...["Oluwatobi", "Sofela", "CodeSweetly"]);
+
+// The invocation above will return:
+“Oluwatobi Sofela runs CodeSweetly”
+
+
+
+var x=[2,3,4];
+undefined
+var y=[6,7,8];
+undefined
+var z=[x,y];
+undefined
+z
+(2) [Array(3), Array(3)]0: (3) [2, 3, 4]0: 21: 32: 4length: 3[[Prototype]]: Array(0)1: (3) [6, 7, 8]length: 2[[Prototype]]: Array(0)
+var w=[...x,...y];
+undefined
+w
+(6) [2, 3, 4, 6, 7, 8]
+w[0]=10;
+10
+w
+(6) [10, 3, 4, 6, 7, 8]
+x
+(3) [2, 3, 4]
+
+
+length member access operator
+
+if(age)
+{
+
+
+rest  fn argu n [para]
+
+spread reference object, array, mutable to immutable,cloning,new copy
+
+
+//variable declare
+
+hoisting(placed at top)
+
+var-fn level scope (not block level), outside fn global ban jata h(window)
+
+let-es6b,block level scope,not attach to window due to [tdz],hoisting hoti h but initialise nhi hota
+
+const-es6 cant change value,shalow constant,we cannot reassign
+
+nothing-accitental global,'use strict'to avoid
+
+temperal dead zone(tdz)
+
+
+function area1()
+{
+    let l=parseInt(prompt('enter length'));
+    let b=parseInt(prompt('enter breadth'));
+
+  console.log('area of rectancle'+l*b);
+    console.log('perimeter'+2*(l+b));
+}
+area1();
+VM604:6 area of rectancle20
+VM604:7 perimeter18
+undefined
+
+
+function calc()
+{
+    var x=parseInt(prompt('enter length'));
+     var y=parseInt(prompt('enter breadth'));
+    var sum=function sum()
+        {
+            return 2*(x+y);
+        }
+
+    var area=function area()
+        {
+            return x*y;
+        }
+
+        return [sum,area];
+}
+
+calc()[1]();
+    
+    
+25
+
+
+
+//In JavaScript, we have 6 falsy values:
+
+false
+
+0 (zero)
+
+‘’ or “” (empty string)
+
+null
+es7+react
+
+undefined
+
+NaN
+
+
+
+filter,reduce,localecompare,foreach,maps
+
+
+foreach-
+filter return subarry
+map return same size array(transformation)
+reduce-callback and initial value(ac,currvalue)
+
+cdn link caching facility
+
+
+foreach-traverse
+searching-find-value/undefined	
+
+
+//REDUCE METHOD OPERATION
+
+var arr=[1000,55000,15000,4500,12000];
+undefined
+arr.reduce((acc,curr)=>
+    curr>10000?acc+curr:acc+0,0
+          );
+82000
+var ans=arr.reduce((acc,curr)=>
+    curr>10000?acc+curr:acc+0,0
+          );
+undefined
+ans;
+82000
+var ans2=arr.reduce((acc,curr)=>{
+    if(curr>10000)
+                    {
+                        acc.push(curr);
+                    } 
+        return acc,[]
+          );
+VM476:7 Uncaught SyntaxError: Unexpected token ')'
+var ans2=arr.reduce((acc,curr)=>{
+    if(curr>10000)
+                    {
+                        acc.push(curr);
+                    } 
+        return acc
+},[]
+          );
+undefined
+ans2
+(3) [55000, 15000, 12000]
+arr
+(5) [1000, 55000, 15000, 4500, 12000]
+int ans3=arr.reduce((acc,cuur)=>{
+    if(acc<curr)
+    {acc=curr}
+      return acc;
+}
+);
+VM712:1 Uncaught SyntaxError: Unexpected identifier 'ans3'
+var ans3=arr.reduce((acc,cuur)=>{
+    if(acc<curr)
+    {acc=curr}
+      return acc;
+}
+);
+VM724:2 Uncaught ReferenceError: curr is not defined
+    at <anonymous>:2:12
+    at Array.reduce (<anonymous>)
+    at <anonymous>:1:14
+(anonymous) @ VM724:2
+(anonymous) @ VM724:1
+var ans3=arr.reduce((acc,curr)=>{
+    if(acc<curr)
+    {acc=curr}
+      return acc;
+}
+);
+undefined
+ans3;
+55000
+arr[0]=87000;
+87000
+var ans3=arr.reduce((acc,curr)=>{
+    if(acc<curr)
+    {acc=curr}
+      return acc;
+}
+);
+undefined
+ans3;
+87000	
+
+end pt(url)
+network call-> json-> objects-> printing in html format(converstions)	
+
+network pe bytes travel kar sakti h so data is fetched in json(string in (key value pair )formate) can be easily converted	
+
+What is MVC in design pattern?
+The Model-View-Controller (MVC) is an architectural pattern which separates an application into three main groups of components: Models, Views, and Controllers. MVC is abbreviated as Model View Controller is a design pattern created for developing applications specifically web applications.
+
+//segregation	
+
+sync- blocking code
+async-non -bliocking
+
+async-promise-state
+1 pending
+2 fulfilled-success
+3 rejected-failed
+
+document.createElement();
+
+////////////day 8////////////////////////
+
+serialization->obj to Json
+deserialization->JSON to obj
+
+callback hell
+es8->await (makes code sync) //block
+
+js ka sugar cotted ver is jsx()
+dom object injection problem
+
+challenges
+add to cart->click evemt->fn
+
+task to perform
+1.total bill
+2.18% gst
+hint:total amount using reduce fn
+3.add a pay now button->razor pay
+API key
+
+minimal vible product(mvp)
+
+///////////////////////////////////////////////////
+libary->flexible(plugins plug and play) REACT
+framework->bounded(given steps to follow ) ANGULAR
+////////////////////////////////////////////////////
+npm config get prefix
+//path
+
+npm audit fix --force
+
+
+
+var a = 5.467;
+var truncated = Math.floor(a * 100) / 100; // = 5.46
+
+
+{inputbox: '3'}inputbox: "3"[[Prototype]]: Object
+main.17f254f75bc83dad56b7.hot-update.js:24 {inputbox: '3*'}
+main.17f254f75bc83dad56b7.hot-update.js:24 {inputbox: '3*'}
+{inputbox: '3*5'}
+ {inputbox: '3*5'}
+Output.jsx:2 3*5
+Output.jsx:2 3*5
+
+console.log(inputbox);
+    // console.log({inputbox})
+																			
